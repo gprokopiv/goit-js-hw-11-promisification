@@ -9,40 +9,26 @@ const users = [
   { name: 'Ajax', active: true },
   { name: 'Lux', active: false },
 ];
-
-// const toggleUserState = (allUsers, userName) => {
-//   const updatedUsers = allUsers.map(user =>
-//     user.name === userName ? { ...user, active: !user.active } : user,
-//   );
-
-// return new Promise ((resolve) => {
-//   const updatedUsers = allUsers.map(user =>
-//           user.name === userName ? { ...user, active: !user.active } : user,
-//         );
-//         resolve()
-//   }) 
-// };
-
-// const logger = updatedUsers => console.table(updatedUsers);
-
-// /*
-//  * Сейчас работает так
-//  */
-// toggleUserState(users, 'Mango', logger);
-// toggleUserState(users, 'Lux', logger);
 const toggleUserState = (allUsers, userName) => {
-    return new Promise ((resolve) => {
-        const updatedUsers = allUsers.map(user =>
-                user.name === userName ? { ...user, active: !user.active } : user,
-              );
-              resolve(toggleUserState)
-        }) 
-  };
-  
-  const logger = updatedUsers => console.table(updatedUsers);
-  
-  /*
-   /*
+  return new Promise ((resolve, reject) => {
+    const updatedUsers = allUsers.map(user);
+})
+  if (user.name === userName) {
+      active: !user.active  } 
+  const error = user, ;
+  reject(error);
+  // callback(updatedUsers);
+};
+
+const logger = updatedUsers => console.table(updatedUsers);
+
+/*
+ * Сейчас работает так
+ */
+toggleUserState(users, 'Mango', logger);
+toggleUserState(users, 'Lux', logger);
+
+/*
  * Должно работать так
  */
 toggleUserState(users, 'Mango').then(logger);
